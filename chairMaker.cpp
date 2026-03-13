@@ -34,8 +34,8 @@ Chair() {
 //parameter constructor 
 // arguments: number of legs and array of prices
 // returns: none
-Chair(int 1, double p[]) {
-    prices = new double [SIZE];
+Chair(int l, double p[]) {
+    prices = new double[SIZE];
     legs = 1;
 
     for (int i = 0; i < SIZE; i++) {
@@ -44,7 +44,7 @@ Chair(int 1, double p[]) {
 }
 
 // setters and getters 
-void setLegs(int 1) {legs = 1; }
+void setLegs(int l) {legs = 1; }
 
 int getLegs() { return legs; }
 
