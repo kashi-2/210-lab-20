@@ -62,4 +62,54 @@ double getAveragePrices() {
 
     return sum / SIZE;
 }
+
+void print() {
+    cout << "CHAIR DATA - legs: " << legs << endl;
+
+    cout << "Price history: ";
+    for (int i = 0; i < SIZE; i++)
+        cout << prices[i] << " ";
+
+    cout << endl;
+    cout << "Historical avg price: " << getAveragePrices();
+    cout << endl << endl;
+}
+};
+
+int main() {
+    cout << fixed << setprecision(2);
+
+    srand(time(0));
+
+    cout << "DEFAULT CHAIR CREATED WITH RANDOM DATA\n\n";
+
+    // default constructor than setters
+    Chair *chairPtr = new Chair;
+    chairPtr->setLegs(4);
+    chairPtr->setPrices(121.21, 232.32, 414.14);
+    chairPtr->print();
+
+    cout << "PARAMETER CONSTRUCTOR CHAIR\n\n";
+
+    //parameter constructor test
+    double priceArray[SIZE] = {525.25, 434.34, 252.52};
+
+    Chair *livingChair = new Chair(3, priceArray);
+    livingChair->print();
+
+    delete livingChair;
+    livingChair = nullptr;
+
+    cout << "ARRAY OF CHAIRS USING DEFAULT CONSTRUCTORS \n\n";
+
+    //dynamic array of chair objects
+    //default constructors that automatically populate data
+    Chair *collection = new Chair[SIZE];
+
+    for (int i = 0; i < SIZE; i++)
+        collection[i].print();
+
+    delete[] collection;
+
+    return 0;
 }
